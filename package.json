@@ -1,0 +1,56 @@
+{
+  "name": "eslint-config-get-off-my-lawn-prettier",
+  "description": "A highly opinionated, sharable config of ESLint rules to produce beautiful, readable JavaScript, optimized for seamless use with Prettier.",
+  "version": "0.0.0",
+  "author": {
+    "name": "Michael Novotny",
+    "email": "manovotny@gmail.com",
+    "url": "https://manovotny.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manovotny/eslint-config-get-off-my-lawn-prettier.git"
+  },
+  "keywords": [
+    "babel",
+    "config",
+    "eslint",
+    "prettier",
+    "react"
+  ],
+  "engines": {
+    "node": ">=8.6.0",
+    "yarn": ">=1.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .json --ext .js",
+    "prettier": "prettier --write \"**/*.{js,json,md,mdx,yml}\"",
+    "test": "yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md,mdx,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "eslint-config-get-off-my-lawn": "4.0.1",
+    "eslint-config-prettier": "3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "husky": "1.1.2",
+    "lint-staged": "7.3.0",
+    "prettier": "1.14.3"
+  },
+  "peerDependencies": {
+    "eslint": ">=4.19.1"
+  }
+}
