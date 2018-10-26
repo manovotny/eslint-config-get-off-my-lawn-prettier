@@ -26,7 +26,7 @@
     "main": "index.js",
     "scripts": {
         "lint": "eslint . --ext .json --ext .js",
-        "prettier": "prettier --write \"**/*.{js,json,md,mdx,yml}\"",
+        "prettier": "prettier --write \"**/*.{js,json,md,yml}\"",
         "test": "yarn lint"
     },
     "husky": {
@@ -35,7 +35,7 @@
         }
     },
     "lint-staged": {
-        "*.{js,json,md,mdx,yml}": [
+        "*.{js,json,md,yml}": [
             "prettier --write",
             "git add"
         ]
